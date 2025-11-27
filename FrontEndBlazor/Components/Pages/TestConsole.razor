@@ -1,0 +1,14 @@
+﻿@page "/testconsole"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+
+<h3>Test Console</h3>
+
+<button @onclick="SayTest">Clique ici</button>
+
+@code {
+    private async Task SayTest()
+    {
+        await JS.InvokeVoidAsync("console.log", "Test");
+    }
+}

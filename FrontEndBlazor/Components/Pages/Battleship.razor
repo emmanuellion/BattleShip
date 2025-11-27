@@ -1,0 +1,56 @@
+﻿@inject IJSRuntime JS
+@rendermode InteractiveServer
+
+<h3>Battleship</h3>
+
+<table>
+	<tbody>
+		@foreach(var i in Enumerable.Range(0, grid_position.GetLength(0)))
+		{
+			<tr>
+				@foreach (var j in Enumerable.Range(0, grid_position.GetLength(1)))
+				{
+					<td class="battlefield-cell" @onclick="() => IsThereShip(i, j)" style="cursor:pointer" row="@i" column="@j">@grid_text[@i, @j]</td>
+				}
+			</tr>
+		}
+	</tbody>
+</table>
+
+@code {
+	private bool[,] grid_position = InitializeRandGridPosition(10, 10);
+	private String[,] grid_text = InitializeGridText(10, 10);
+
+	public static bool[,] InitializeRandGridPosition(int rows, int columns)
+	{
+		bool[,] grid = new bool[rows, columns];
+		for(int i=0; i<grid.GetLength(0); i++)
+		{
+			for(int j=0; j < grid.GetLength(1); j++)
+			{
+				grid[i, j] = (i+j)%2 == 0;
+			}
+		}
+		return grid;
+	}
+
+	public static String[,] InitializeGridText(int rows, int columns)
+	{
+		String[,] grid = new String[rows, columns];
+		for (int i = 0; i < grid.GetLength(0); i++)
+		{
+			for (int j = 0; j < grid.GetLength(1); j++)
+			{
+				grid[i, j] = "◘";
+			}
+		}
+		return grid;
+	}
+
+	private async Task IsThereShip(int i, int j)
+	{
+		await JS.InvokeVoidAsync("console.log", $"{grid_position[i, j]}");
+		String display = grid_position[i, j] ? "X" : "•";
+		grid_text[i, j] = display;
+	}
+}

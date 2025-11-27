@@ -1,10 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{113355C9-4121-47B6-B426-0A2568EFE5C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{0830D044-4218-4220-B63A-887C43C19B94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{E337133B-BE1D-4AD8-99EB-37465BE8888A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEndBlazor", "FrontEndBlazor\FrontEndBlazor.csproj", "{321672FD-108F-4F97-81B7-9726FA721517}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,15 @@ Global
 		{E337133B-BE1D-4AD8-99EB-37465BE8888A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E337133B-BE1D-4AD8-99EB-37465BE8888A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E337133B-BE1D-4AD8-99EB-37465BE8888A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321672FD-108F-4F97-81B7-9726FA721517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321672FD-108F-4F97-81B7-9726FA721517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321672FD-108F-4F97-81B7-9726FA721517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321672FD-108F-4F97-81B7-9726FA721517}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4181237D-4098-40C0-9401-5DB47670B940}
 	EndGlobalSection
 EndGlobal
